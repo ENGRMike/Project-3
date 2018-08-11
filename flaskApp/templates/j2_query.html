@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Machine Learning Demonstration using Natural Language Processing">
+    <meta name="author" content="Bobby Jaikaran">
+    <title>xPlicitation</title>
+    <link href="/static/bootstrap.css" rel="stylesheet">
+    <link href="/static/materialize.min.css" rel="stylesheet">
+    <link href="/static/xplicitation.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Antic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400');
+    </style>
+</head>
+
+<body style="height:100%;width:100%;">
+    <div tyle="margin:5x;background:transparent;height:650px; width:100%; position:absolute;">
+        
+        <center>
+            <div id="qmodal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Submit Lyrics</h3>
+                    </div>
+                    <div class="modal-body">
+            
+                    <form action="process" method="post"> 
+                            <input type="text" id="lyrics"name="lyrics" value="" style="height:350px; width:100%; vertical-alignment:text-top;">
+                            <input type="submit" value="Search" class="navButton">
+                        </form>
+
+                    </div>
+                    <div class="modal-footer" style="background-color:#19334d">
+                        <span class="close">&times;</span>
+                    </div>
+                </div>
+
+            </div>
+            <div id="qmodalA" class="modalA">
+
+                    <!-- Modal content -->
+                    <div class="modalA-content">
+                        <div class="modal-header">
+                            <h3>Artist / Lyric Search</h3>
+                        </div>
+                        <div class="modalA-body">
+                                <form action="process" method="post"> 
+                                        <input type="text" id="artist"name="artist" value="Artist" >
+                                        <br/>
+                                        <input type="text" id="title"name="title" value="Title" >
+                                        <input type="submit" value="Search" class="navButton">
+                                    </form>
+    
+                        </div>
+                        <div class="modal-footer" style="background-color:#19334d">
+                                <span class="closeA">&times;</span>
+                            </div>
+                    </div>
+    
+                </div>
+
+
+
+            <!-- Trigger/Open The Modal -->
+            
+    <button id="modalBtn" class="navButton" style="color:#FFFFFF;font-size: calc(25px + .2vw);text-align: center;width: calc(250px + .2vw);height: calc(150px + .2vw);margin:25px;">
+        Lyric Search
+    </button>
+        <br/>
+        <br/>
+    <button id="modalBtnA" class="navButton" style="color:#FFFFFF;font-size: calc(25px + .2vw);text-align: center;width: calc(250px + .2vw);height: calc(150px + .2vw);margin:25px;">
+            Artist/Title Search
+        </button>
+
+        </center>
+    </div>
+    <script src="/static/bootstrap.js" type="text/javascript"></script>
+    <script src="/static/bootstrap.js.map" type="text/javascript"></script>
+    <script src="/static/fade.js" type="text/javascript"></script>
+    <script src="/static/ie10-viewport-bug-workaround.js" type="text/javascript"></script>
+    <script src="/static/jquery.min.js" type="text/javascript"></script>
+    <script src="/static/materialize.min.js" type="text/javascript"></script>
+    <script src="/static/p5.js" type="text/javascript"></script>
+    <script src="/static/popper.min.js" type="text/javascript"></script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("qmodal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("modalBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+            // Get the modal
+            var modalA = document.getElementById("qmodalA");
+    
+            // Get the button that opens the modal
+            var btnA = document.getElementById("modalBtnA");
+    
+            // Get the <span> element that closes the modal
+            var spanA = document.getElementsByClassName("closeA")[0];
+    
+            // When the user clicks the button, open the modal 
+            btnA.onclick = function () {
+                modalA.style.display = "block";
+            }
+    
+            // When the user clicks on <span> (x), close the modal
+            spanA.onclick = function () {
+                modalA.style.display = "none";
+            }
+    
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modalA) {
+                    modalA.style.display = "none";
+                }
+            }
+        </script>
+</body>
+
+</html>
